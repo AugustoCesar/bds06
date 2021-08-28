@@ -1,5 +1,5 @@
-<h1>Desafio para entregar</h1>
-<h2>TAREFA: MovieFlix casos de uso</h2>
+<h1>Desafio</h1>
+<h2>MovieFlix casos de uso</h2>
 
 <h3>Casos de uso</h3>
 <img src="https://github.com/AugustoCesar/assets/blob/main/img/movieflix.png" alt="movieflix"/>

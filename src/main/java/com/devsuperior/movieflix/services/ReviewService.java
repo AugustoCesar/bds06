@@ -1,5 +1,7 @@
 package com.devsuperior.movieflix.services;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,7 +11,7 @@ import com.devsuperior.movieflix.entities.Review;
 import com.devsuperior.movieflix.entities.User;
 import com.devsuperior.movieflix.repositories.MovieRepository;
 import com.devsuperior.movieflix.repositories.ReviewRepository;
-import com.devsuperior.movieflix.services.exceptions.ForbiddenException;
+import com.devsuperior.movieflix.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class ReviewService {
@@ -36,8 +38,8 @@ public class ReviewService {
 			entity = reviewRepository.save(entity);
 			return new ReviewDTO(entity);
 			
-		} catch (ForbiddenException e) {
-			throw new ForbiddenException("Acesso negado para o usuário: "+ user.getEmail());
+		} catch (EntityNotFoundException e) {
+			throw new ResourceNotFoundException("User not found");
 		}
 	}
 	
